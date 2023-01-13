@@ -1,7 +1,6 @@
 import torch
 import torch.multiprocessing as multiprocessing
-from torch._C import _set_worker_signal_handlers, _update_worker_pids, \
-    _remove_worker_pids, _error_if_any_worker_fails
+from torch._C import _set_worker_signal_handlers
 from .sampler import SequentialSampler, RandomSampler, BatchSampler
 import signal
 import functools
@@ -12,6 +11,14 @@ import threading
 import traceback
 from torch._six import string_classes, int_classes
 import numpy as np
+
+from torch._C import _set_worker_signal_handlers
+from torch.utils.data import _utils
+from torch.utils.data.dataloader import DataLoader
+from torch.utils.data.dataloader import _DataLoaderIter
+
+
+_use_shared_memory = False
 
 if sys.version_info[0] == 2:
     import Queue as queue

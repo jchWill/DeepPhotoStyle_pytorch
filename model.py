@@ -380,7 +380,7 @@ def run_style_transfer(cnn, normalization_mean, normalization_std,
               
                 saved_img = input_img.clone() 
                 saved_img.data.clamp_(0, 1)
-                utils.save_pic(saved_img, run[0])
+                utils.save_pic(saved_img, run[0], "./tmp/")
             return loss
 
         optimizer.step(closure)

@@ -5,6 +5,7 @@ from matting import *
 import config
 import scipy.ndimage as spi
 from wls_filter import wls_filter
+import os
 
 
 def load_image(path, size):
@@ -32,12 +33,12 @@ def show_pic(tensor, title=None):
     plt.imshow(image)
     plt.title(title)
 
-def save_pic(tensor, i):
+def save_pic(tensor, i, path:str):
     unloader = transforms.ToPILImage() # tensor to PIL image
     image = tensor.cpu().clone()
     image = image.squeeze(0)
     image = unloader(image)
-    image.save("temp_result_{}.png".format(i), "PNG")
+    image.save(path + "temp_result_{}.png".format(i), "PNG")
 
 import torch
 

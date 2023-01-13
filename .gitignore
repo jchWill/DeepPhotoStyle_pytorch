@@ -1,0 +1,8 @@
+/seg_checkpoint
+/testImage
+/config.py
+/test.py
+/__pycache__
+/tmp
+*.pyc
+*.png

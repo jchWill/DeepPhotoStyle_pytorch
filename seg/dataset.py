@@ -4,7 +4,8 @@ import torch
 import lib.utils.data as torchdata
 import cv2
 from torchvision import transforms
-from scipy.misc import imread, imresize
+from imageio import imread
+
 import numpy as np
 
 # Round x to the nearest multiple of p and x' >= x
@@ -260,7 +261,7 @@ class TestDataset(torchdata.Dataset):
         this_record = self.list_sample[index]
         # load image and label
         image_path = this_record['fpath_img']
-        img = imread(image_path, mode='RGB')
+        img = imread(image_path, pilmode='RGB')
         img = img[:, :, ::-1] # BGR to RGB!!!
 
         ori_height, ori_width, _ = img.shape
