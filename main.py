@@ -146,9 +146,10 @@ def pipeline(content_path:str=None, style_path:str=None, content=None, style=Non
         
         if clear_dir:
             shutil.rmtree(OUTPUT_DIR)
+        return output
     except Exception as e:
         print(e)
-    return output
+   
 
 
 
