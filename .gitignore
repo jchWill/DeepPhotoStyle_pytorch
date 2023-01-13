@@ -4,5 +4,6 @@
 /test.py
 /__pycache__
 /tmp
+/results
 *.pyc
 *.png

@@ -1,4 +1,34 @@
+# 升级代码
+
+原仓库内一些代码已过时，此仓库做了一些更改，让代码在最新的torch上可以运行，并且更改了shell脚本中的模型url。
+
+## 使用
+
+```bash
+git clone 
+
+https://github.com/jchWill/DeepPhotoStyle_pytorch.git
+
+cd DeepPhotoStyle_pytorch
+
+bash download_seg_model.sh 
+
+
+
+
+python main.py --style_image path_style_image --content_image path_content_image --clear_dir {true/True/other}do_clear_temp_results
+```
+
+main.py中也做了简单的封装。
+
+有任何问题可以提issue，但是作为在读本科生不保证能够解答。
+
+
+
+下面是原来README中的内容。
+
 # DeepPhotoStyle_pytorch
+
 使用Pytorch重现文章 ["Deep Photo Style Transfer"](https://arxiv.org/abs/1703.07511) 的效果.
 本工程提供图像语义切分的代码，无需手动抠图.
 ## 一些实验的效果图
